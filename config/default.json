@@ -1,0 +1,53 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "N52KFB+4ljjttUhE/vJSpzINsGE=",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "agent":{
+    "client":"mysql2",
+    "connection":{
+      "host":"localhost",
+      "port":"3306",
+      "user":"root",
+      "password":"",
+      "database":"sfoapi"
+    }
+  },
+  "mailer":{
+    "host":"smtp.mailtrap.io",
+    "port":2525,
+    "auth":{
+        "user":"ced9c935a165a6",
+        "pass":"ab4d39a2fede8a"
+    }
+  },
+  "mysql": {
+    "client": "mysql2",
+    "connection": "mysql://root:@localhost:3306/sfoapi"
+  }
+}
